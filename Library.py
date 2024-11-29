@@ -59,3 +59,37 @@ class library:
                 
         print(list_dicBook)
         return (self.lended_books)
+
+l1 = library()
+l1.booklist= ['Python', 'Rich Daddy Poor Daddy', 'Harry Potter', 'C++ Basics', 'Algorithms by CLRS']
+l1.lended_books= {"aya":["the hunger games"] }
+print(l1.lended_books)
+l1.name_of_library= "CodeWithHarry"
+
+while True:
+    entry = input(f"Welcome to {l1.name_of_library} library, you can find our services below:\n 1-Display Books\n 2-lend a Book\n 3-Add a Book\n 4-Return a Book \n please enter the service number ")
+    try:
+        if entry == "1":
+            l1.available_Books()
+        elif entry == "2":
+            l1.books_lending()
+        elif entry == "3":
+            l1.add_book()
+        elif entry == "4":
+            print(l1.borrowed_Book())
+        else:
+            pass
+    except:
+        print("sorry you're only allowed to enter numbers from 1 to 4")
+    
+    answer = input("Do you want to continue? y/n ")
+    try:
+        if answer.lower() == "y":
+            continue
+
+        elif answer.lower() == "n":
+            print("thank you")
+            break
+
+    except:
+        print("you can only type y or n")
